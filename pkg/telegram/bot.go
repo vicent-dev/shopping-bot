@@ -12,8 +12,6 @@ var (
 	ResetCartCommand     = "reset"
 )
 
-type messageProcessor func(int64, string) string
-
 type Bot struct {
 	bot *tgbotapi.BotAPI
 }

@@ -5,6 +5,8 @@ import (
 	"strings"
 )
 
+type messageProcessor func(int64, string) string
+
 var (
 	processors = map[string]messageProcessor{
 		AddProductCommand:    addProduct,
