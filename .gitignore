@@ -1,2 +1,5 @@
 .idea
 config/config.yaml
+.env
+shopping-bot
+shopping-bot-backup.service

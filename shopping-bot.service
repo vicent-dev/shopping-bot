@@ -1,0 +1,14 @@
+[Unit]
+Description=Shipping manager telegram bot
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=DEPLOY_USER
+ExecStart=DEPLOY_PATH/shopping-bot
+
+[Install]
+WantedBy=multi-user.target
