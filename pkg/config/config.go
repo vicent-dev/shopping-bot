@@ -3,10 +3,8 @@ package config
 import (
 	"gopkg.in/yaml.v3"
 	"log"
-	"os"
+	"shopping-bot/config"
 )
-
-const filename = "config.yaml"
 
 type Config struct {
 	Bot struct {
@@ -17,13 +15,8 @@ type Config struct {
 func NewConfig() *Config {
 	c := &Config{}
 
-	cFile, err := os.ReadFile(filename)
-
-	if err != nil {
-		log.Fatalln(err)
-	}
-
-	err = yaml.Unmarshal(cFile, c)
+	cFile := config.GetConfigFile()
+	err := yaml.Unmarshal(cFile, c)
 
 	if err != nil {
 		log.Fatalln(err)
