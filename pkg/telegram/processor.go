@@ -17,7 +17,7 @@ var (
 )
 
 func addProduct(chatId int64, message string) string {
-	c := buy.GetCart(chatId)
+	c := buy.GetRepository().Get(chatId)
 
 	c.AddProduct(message)
 
@@ -25,7 +25,7 @@ func addProduct(chatId int64, message string) string {
 }
 
 func removeProduct(chatId int64, message string) string {
-	c := buy.GetCart(chatId)
+	c := buy.GetRepository().Get(chatId)
 	splited := strings.Split(message, " ")
 	ps := splited[1:]
 
@@ -37,12 +37,12 @@ func removeProduct(chatId int64, message string) string {
 }
 
 func listProducts(chatId int64, _ string) string {
-	c := buy.GetCart(chatId)
+	c := buy.GetRepository().Get(chatId)
 	return strings.Join(c.Products, "\n")
 }
 
 func resetCart(chatId int64, _ string) string {
-	c := buy.GetCart(chatId)
+	c := buy.GetRepository().Get(chatId)
 	c.Reset()
 
 	return "Cart reset"

@@ -9,7 +9,7 @@ type Repository interface {
 	Store(*Cart)
 }
 
-func getRepository() Repository {
+func GetRepository() Repository {
 	if r != nil {
 		return r
 	}

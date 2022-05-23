@@ -7,7 +7,7 @@ type Cart struct {
 }
 
 func (c *Cart) AddProduct(p string) {
-	defer getRepository().Store(c)
+	defer GetRepository().Store(c)
 
 	for _, cp := range c.Products {
 		if cp == p {
@@ -19,7 +19,7 @@ func (c *Cart) AddProduct(p string) {
 }
 
 func (c *Cart) RemoveProduct(p string) {
-	defer getRepository().Store(c)
+	defer GetRepository().Store(c)
 
 	for i, cp := range c.Products {
 		if cp == p {
@@ -29,6 +29,6 @@ func (c *Cart) RemoveProduct(p string) {
 	}
 }
 func (c *Cart) Reset() {
-	defer getRepository().Store(c)
+	defer GetRepository().Store(c)
 	c.Products = []string{}
 }

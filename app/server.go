@@ -1,6 +1,7 @@
 package app
 
 import (
+	"github.com/joho/godotenv"
 	"shopping-bot/pkg/config"
 	"shopping-bot/pkg/telegram"
 )
@@ -11,6 +12,8 @@ type Server struct {
 }
 
 func NewServer() *Server {
+	godotenv.Load()
+
 	c := config.NewConfig()
 
 	return &Server{

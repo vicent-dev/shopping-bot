@@ -6,12 +6,8 @@ import (
 	"os"
 )
 
-var (
-	cartsFilePath = os.Getenv("STORE_JSON_PATH")
-)
-
 func Load[T any](ts T) {
-	bs, _ := os.ReadFile(cartsFilePath)
+	bs, _ := os.ReadFile(os.Getenv("STORE_JSON_PATH"))
 	err := json.Unmarshal(bs, &ts)
 	if err != nil {
 		alog.Error(err.Error())
@@ -20,7 +16,7 @@ func Load[T any](ts T) {
 
 func Store[T any](data T) {
 	bs, _ := json.MarshalIndent(data, "", " ")
-	err := os.WriteFile(cartsFilePath, bs, 0644)
+	err := os.WriteFile(os.Getenv("STORE_JSON_PATH"), bs, 0644)
 
 	if err != nil {
 		alog.Error(err.Error())

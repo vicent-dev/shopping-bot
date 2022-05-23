@@ -9,6 +9,10 @@ type JsonRepository struct {
 }
 
 func (j JsonRepository) Store(cart *Cart) {
+	if j.carts == nil {
+		j.carts = make(map[int64]*Cart)
+	}
+
 	j.carts[cart.Channel] = cart
 	storage.Store[map[int64]*Cart](j.carts)
 }
