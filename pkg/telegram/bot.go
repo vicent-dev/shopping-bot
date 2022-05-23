@@ -1,8 +1,8 @@
 package telegram
 
 import (
+	"github.com/en-vee/alog"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
-	"log"
 )
 
 var (
@@ -20,7 +20,8 @@ func NewBot(token string) *Bot {
 	bot, err := tgbotapi.NewBotAPI(token)
 
 	if err != nil {
-		log.Fatal(err)
+		alog.Error(err.Error())
+		panic(err)
 	}
 
 	bot.Debug = true
@@ -32,7 +33,7 @@ func NewBot(token string) *Bot {
 
 func (b *Bot) Run() error {
 
-	log.Printf("Authorized on account %s", b.bot.Self.UserName)
+	alog.Info("Authorized on account %s", b.bot.Self.UserName)
 
 	u := tgbotapi.NewUpdate(0)
 	u.Timeout = 60

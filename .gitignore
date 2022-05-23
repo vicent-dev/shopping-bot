@@ -1,5 +1,6 @@
 .idea
 config/config.yaml
+storage/carts.json
 .env
 shopping-bot
 shopping-bot-backup.service

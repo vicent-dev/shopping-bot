@@ -3,7 +3,7 @@ package config
 import (
 	"gopkg.in/yaml.v3"
 	"log"
-	"shopping-bot/config"
+	"shopping-bot/static"
 )
 
 type Config struct {
@@ -15,7 +15,7 @@ type Config struct {
 func NewConfig() *Config {
 	c := &Config{}
 
-	cFile := config.GetConfigFile()
+	cFile := static.GetConfigFile()
 	err := yaml.Unmarshal(cFile, c)
 
 	if err != nil {

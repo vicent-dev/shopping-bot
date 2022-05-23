@@ -1,3 +1,7 @@
+github.com/en-vee/aconf v0.0.0-20190302084711-a3ed365b7cff h1:Q/FSzb34kHK2uLnGkxalw/YutFuY8/d+iSRZnTcJwyU=
+github.com/en-vee/aconf v0.0.0-20190302084711-a3ed365b7cff/go.mod h1:rJ0QnmuXDC2jabOcCX/C6Udf758DRMYT01XCDl0UHJ8=
+github.com/en-vee/alog v0.0.0-20190922070830-98e6a77f6e73 h1:nqljehHGjGCwcnM6gBNnvnZEzW0BDT2oyal4vJGUOIo=
+github.com/en-vee/alog v0.0.0-20190922070830-98e6a77f6e73/go.mod h1:eRITUrKt/rznD1RkIgawvk1qYdpHjYK0l8Bq7bQRRvk=
 github.com/go-telegram-bot-api/telegram-bot-api/v5 v5.5.1 h1:wG8n/XJQ07TmjbITcGiUaOtXxdrINDz1b0J1w0SzqDc=
 github.com/go-telegram-bot-api/telegram-bot-api/v5 v5.5.1/go.mod h1:A2S0CWkNylc2phvKXWBBdD3K0iGnDBGbzRpISP2zBl8=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
